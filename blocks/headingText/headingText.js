@@ -1,5 +1,5 @@
 export default function decorate(block) {
-    block.classList.add('content-block');
+    block.classList.add('content-block-rajpurohit');
     
     [...block.children].forEach((row) => {
       [...row.children].forEach((col) => {
