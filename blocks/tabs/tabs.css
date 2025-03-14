@@ -14,7 +14,7 @@
   color: #505050;
   display: inline-block;
   margin: 25px auto;
-  /* display: flex; */
+  display: flex;
   /* align-items: center; */
   /* justify-content: center; */
 }
