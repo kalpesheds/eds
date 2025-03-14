@@ -32,6 +32,8 @@
     text-overflow: unset;
     overflow: unset;
     white-space: unset;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
     transition: background-color 0.2s;
   }
   
