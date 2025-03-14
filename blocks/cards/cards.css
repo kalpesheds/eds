@@ -3,18 +3,69 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 24px;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  border-radius: 18px;
-  background-color: var(--background-color);
+  flex: 0 50%;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  border-radius: 15px;
+  margin: 8px;
+  padding: 10px 15px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 265px;
+  transition: 0.7s;
+}
+
+.cards > ul > li:hover {
+  background: #309df0;
+  color: #fff;
+  transform: scale(1.1);
+  z-index: 9;
+}
+
+.cards > ul > li:before {
+  content: "";
+  position: absolute;
+  background: rgb(85 108 214 / 5%);
+  width: 170px;
+  height: 400px;
+  z-index: -1;
+  transform: rotate(42deg);
+  right: -56px;
+  top: -23px;
+  border-radius: 35px;
+}
+
+.cards > ul > li:hover::before {
+  background: rgb(85 108 214 / 10%);
+}
+
+.cards > ul > li:hover .cards-card-body p,
+.cards > ul > li:hover .cards-card-body p strong {
+  color: #fff;
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+  /* padding: 20px; */
+  text-align: center;
+  transition: color 0.3s ease-in-out;
+}
+
+.cards .cards-card-body p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.cards .cards-card-body p strong {
+  font-size: 18px;
+  color: #0073e6;
 }
 
 .cards .cards-card-image {
@@ -27,4 +78,26 @@
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.cards > ul > li:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+/* Button Styling Inside the Card */
+.cards > ul > li:hover button {
+  background: #fff !important;
+  color: #309df0;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cards > ul > li:hover button:hover {
+  background: #fff;
+  color: #0073e6;
 }
